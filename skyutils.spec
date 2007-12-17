@@ -14,7 +14,6 @@ Source0: 	http://zekiller.skytech.org/fichiers/%{name}-%{version}.tar.bz2
 URL: 		http://zekiller.skytech.org/coders_en.html
 License: 	GPL
 Group: 		Development/C
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	sed, /sbin/ldconfig
 
 %description
