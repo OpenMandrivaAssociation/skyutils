@@ -1,6 +1,6 @@
 %define name	skyutils
 %define version	2.8
-%define release	%mkrel 5
+%define release	%mkrel 6
 
 %define major	2.8
 %define libname %mklibname %name %major
