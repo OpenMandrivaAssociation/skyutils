@@ -11,11 +11,13 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source0: 	http://zekiller.skytech.org/fichiers/%{name}-%{version}.tar.bz2
+Patch0:		skyutils-2.8-fix-link.patch
+Patch1:		skyutils-2.8-fix-str-fmt.patch
 URL: 		http://zekiller.skytech.org/coders_en.html
 License: 	GPL
 Group: 		Development/C
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: 	sed, /sbin/ldconfig
+BuildRequires: 	sed
 
 %description
 Author Christophe CALMEJANE says:
@@ -49,18 +51,17 @@ Static library of %{name}
 
 %prep
 %setup -q
+%patch0 -p0
+%patch1 -p0
 
 %build
-
-#enable ansi soooo beutiful...
-
-%configure --enable-ansi
-
+autoreconf -fi
+%configure2_5x --enable-ansi
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 
 %multiarch_binaries $RPM_BUILD_ROOT%{_bindir}/skyutils-config
 
