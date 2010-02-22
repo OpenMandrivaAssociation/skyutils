@@ -1,6 +1,6 @@
 %define name	skyutils
 %define version	2.8
-%define release	%mkrel 7
+%define release	%mkrel 8
 
 %define major	2.8
 %define libname %mklibname %name %major
@@ -18,6 +18,7 @@ License: 	GPL
 Group: 		Development/C
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	sed
+BuildRequires:	openssl-devel
 
 %description
 Author Christophe CALMEJANE says:
