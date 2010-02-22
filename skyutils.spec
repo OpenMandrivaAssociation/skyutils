@@ -1,6 +1,6 @@
 %define name	skyutils
 %define version	2.8
-%define release	%mkrel 6
+%define release	%mkrel 7
 
 %define major	2.8
 %define libname %mklibname %name %major
@@ -42,8 +42,9 @@ This package is needed if you want to install smssend.
 %package -n %libname-devel
 Summary:	Development parts of %{name}
 Group:		Development/C
-Requires:	%{libname} = %{version}
-Provides:	lib%{name}-devel %{name}-devel
+Requires:	%{libname} = %{version}-%{release}
+Provides:	lib%{name}-devel = %{version}-%{release}
+Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n %libname-devel
 Static library of %{name}
