@@ -1,0 +1,11 @@
+--- src/skyutils.h.str	2010-02-22 21:25:09.000000000 +0100
++++ src/skyutils.h	2010-02-22 21:25:28.000000000 +0100
+@@ -279,7 +279,7 @@
+ #ifdef __unix__
+ #define SU_PrintDebug(x,...) /* If you have an error here, remove 'x,...' from the () */
+ #include <syslog.h>
+-#define SU_SYSLOG_FN(x,y) syslog(x,y)
++#define SU_SYSLOG_FN(x,y) syslog(x,"%s",y)
+ #else /* !__unix__ */
+ #define SU_PrintDebug() /* Avoid compilation warnings */
+ extern FILE *SU_LogFile;

@@ -1,0 +1,22 @@
+--- src/Makefile.am.link	2010-02-22 21:33:46.000000000 +0100
++++ src/Makefile.am	2010-02-22 21:34:23.000000000 +0100
+@@ -22,5 +22,7 @@
+ 
+ libskyutils_la_LDFLAGS = \
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-	-release $(LT_RELEASE) \
++	-release $(LT_RELEASE)
++libskyutils_la_LIBADD = \
++	$(SU_DL_LIB) $(SU_SSL_LIB) \
+         @SU_PTHREAD_LIB@
+--- configure.in.link	2010-02-22 21:31:26.000000000 +0100
++++ configure.in	2010-02-22 21:33:10.000000000 +0100
+@@ -171,7 +171,7 @@
+ 
+ SU_SSL_CFLAGS=""
+ if test "$ssl" = "true"; then
+-  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl")
++  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl -lcrypto")
+   if test ! "$SU_SSL_LIB"; then
+     AC_MSG_WARN("Cannot find libssl... ssl code in skyweb will be disabled")
+     ssl=false
