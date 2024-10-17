@@ -13,7 +13,7 @@ Release: 	%{release}
 Source0: 	http://zekiller.skytech.org/fichiers/%{name}-%{version}.tar.bz2
 Patch0:		skyutils-2.8-fix-link.patch
 Patch1:		skyutils-2.8-fix-str-fmt.patch
-URL: 		http://zekiller.skytech.org/coders_en.html
+URL: 		https://zekiller.skytech.org/coders_en.html
 License: 	GPL
 Group: 		Development/C
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
